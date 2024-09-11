@@ -4,11 +4,12 @@ import "./style.css";
 window.onload = function() {
   //opciones de quien
   const quien = [
-    "Mi aspiradora robot",
-    "Una falla en la matrix",
-    "Un ataque de amnesia colectiva",
-    "Una invasión alienígena",
-    "Un error en la simulación"
+    "¡Mi aspiradora robot",
+    "¡Una falla en la matrix",
+    "¡Un ataque de amnesia colectiva",
+    "¡Una invasión alienígena",
+    "¡Un error en la simulación",
+    "¡Un duende eléctricista"
   ];
   //opciones de que hizo
   const Hizo = [
@@ -16,15 +17,17 @@ window.onload = function() {
     "eliminó en forma permanente",
     "desactivó temporalmente",
     "reprogramó",
-    "alteró"
+    "alteró",
+    "desmaterializó"
   ];
   //opciones de lo afectado
   const objetoAfectado = [
-    "la red",
-    "mi teléfono",
-    "mi código",
-    "mi computadora",
-    "mi memoria"
+    "la red!",
+    "mi teléfono!",
+    "mi código!",
+    "mi computadora!",
+    "mi memoria!",
+    "el tejido del espacio-tiempo!"
   ];
   //función que combina las const para generar la excusa
   function generarExcusa() {
