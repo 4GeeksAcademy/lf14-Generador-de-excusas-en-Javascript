@@ -12,7 +12,7 @@ window.onload = function() {
     "¡Un duende eléctricista"
   ];
   //opciones de que hizo
-  const Hizo = [
+  const hizo = [
     "hizo desaparecer",
     "eliminó en forma permanente",
     "desactivó temporalmente",
@@ -29,14 +29,15 @@ window.onload = function() {
     "mi memoria!",
     "el tejido del espacio-tiempo!"
   ];
-  //función que combina las const para generar la excusa
+
+  function seleccionarAleatorio(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
   function generarExcusa() {
-    //math.random devuelve random y math.floor redondea
-    const randomquien = quien[Math.floor(Math.random() * quien.length)];
-    const randomHizo = Hizo[Math.floor(Math.random() * Hizo.length)];
-    const randomobjetoAfectado =
-      objetoAfectado[Math.floor(Math.random() * objetoAfectado.length)];
-    const excuse = `${randomquien} ${randomHizo} ${randomobjetoAfectado}.`;
+    const randomQuien = seleccionarAleatorio(quien);
+    const randomHizo = seleccionarAleatorio(hizo);
+    const randomObjetoAfectado = seleccionarAleatorio(objetoAfectado);
+    const excuse = `${randomQuien} ${randomHizo} ${randomObjetoAfectado}.`;
     document.getElementById("excuse").innerHTML = excuse;
     const generarButton = document.getElementById("generar");
     generarButton.addEventListener("click", generarExcusa);
