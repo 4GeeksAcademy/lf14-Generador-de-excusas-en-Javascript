@@ -2,7 +2,6 @@
 import "bootstrap";
 import "./style.css";
 window.onload = function() {
-  //opciones de quien
   const quien = [
     "¡Mi aspiradora robot",
     "¡Una falla en la matrix",
@@ -11,8 +10,8 @@ window.onload = function() {
     "¡Un error en la simulación",
     "¡Un duende eléctricista"
   ];
-  //opciones de que hizo
-  const Hizo = [
+
+  const hizo = [
     "hizo desaparecer",
     "eliminó en forma permanente",
     "desactivó temporalmente",
@@ -20,7 +19,7 @@ window.onload = function() {
     "alteró",
     "desmaterializó"
   ];
-  //opciones de lo afectado
+
   const objetoAfectado = [
     "la red!",
     "mi teléfono!",
@@ -29,14 +28,19 @@ window.onload = function() {
     "mi memoria!",
     "el tejido del espacio-tiempo!"
   ];
-  //función que combina las const para generar la excusa
+
+  function generarAleatorio(Array) {
+    return Math.floor(Math.random() * Array.length);
+  }
+
   function generarExcusa() {
-    //math.random devuelve random y math.floor redondea
-    const randomquien = quien[Math.floor(Math.random() * quien.length)];
-    const randomHizo = Hizo[Math.floor(Math.random() * Hizo.length)];
-    const randomobjetoAfectado =
-      objetoAfectado[Math.floor(Math.random() * objetoAfectado.length)];
-    const excuse = `${randomquien} ${randomHizo} ${randomobjetoAfectado}.`;
+    const excuse =
+      quien[generarAleatorio(quien)] +
+      " " +
+      hizo[generarAleatorio(hizo)] +
+      " " +
+      objetoAfectado[generarAleatorio(objetoAfectado)];
+
     document.getElementById("excuse").innerHTML = excuse;
     const generarButton = document.getElementById("generar");
     generarButton.addEventListener("click", generarExcusa);
